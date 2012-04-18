@@ -1,0 +1,21 @@
+Creates new template.
+
+    struct template.create(struct templateAttributes)
+
+Parameters:
+    struct templateAttributes {                         Template attributes
+        string name                                     Template name
+        string from                                     Template sender
+        string subject                                  Template subject
+        string plainBody                                Template plaintext body
+        string htmlBody                                 Template html body
+    }
+
+Return value:
+    struct {
+        int status                                      Status
+                                                        (200 = OK)
+                                                        (405 = Template already exists)
+        string statusMessage                            Verbose status
+        int id                                          Template ID
+    }

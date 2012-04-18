@@ -1,0 +1,12 @@
+Source: spamserver
+Section: unknown
+Priority: extra
+Maintainer: Eduard Veleba <eduard@pearescope.com>
+Build-Depends: debhelper (>= 7), autotools-dev, autoconf, automake, libtool, libthreadserver-dev (>=0.0.15), libthreadserver-handler-cpp-frpc-dev (>=0.0.15), libdbglog-dev (>=1.5.1), libboost-all-dev, libfastrpc-dev (>=3.0.5), libmysqlwrapper-dev (>=0.0.5), libteng-dev (>=2.1.0), libvmime-dev, libmagic-dev, libmysqlclient-dev, libmysqlwrapper-dev (>=0.0.5)
+Standards-Version: 3.7.3
+
+Package: spamserver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, threadserver (>=0.0.1)
+Description: SpamServer FastRPC server
+ SpamServer FastRPC server

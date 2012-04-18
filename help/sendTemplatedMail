@@ -1,0 +1,36 @@
+Sends templated mail immediatelly.
+
+    struct sendTemplatedMail(struct templatedMailAttributes)
+
+Parameters:
+    struct templatedMailAttributes {                    Templated mail attributes
+        string templateName                             Template name
+        array to (                                      Mail recipients
+            string
+        )
+        [array cc (                                     Mail carbon copy recipients
+            string
+        )]
+        [array bcc (                                    Mail blind carbon copy recipients
+            string
+        )]
+        struct data {                                   Mail template data
+            ...                                         Arbitrary data (will be sent to Teng)
+        }
+        [array attachments (
+            struct {
+                binary data                             Attachment data
+                string filename                         Attachment filename
+                [string description                     Attachment description]
+            }
+        )]
+    }
+
+Return value:
+    struct {
+        int status                                      Status
+                                                        (200 = OK)
+                                                        (401 = Attribute error)
+                                                        (402 = Can't render template)
+        string statusMessage                            Verbose status
+    }

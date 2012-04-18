@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+exec 1>/dev/null
+exec 2>/dev/null
+
+cd /srv/spamserver/log
+exec /srv/spamserver/bin/spamserver -f /srv/spamserver/conf/spamserver.conf -d
+

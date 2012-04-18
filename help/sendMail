@@ -1,0 +1,34 @@
+Sends mail immediatelly.
+
+    struct sendMail(struct mailAttributes)
+
+Parameters:
+    struct mailAttributes {                             Mail attributes
+        string from                                     Mail sender
+        array to (                                      Mail recipients
+            string
+        )
+        [array cc (                                     Mail carbon copy recipients
+            string
+        )]
+        [array bcc (                                    Mail blind carbon copy recipients
+            string
+        )]
+        string subject                                  Mail Subject
+        string plainBody                                Mail plaintext body
+        [string htmlBody                                Mail HTML body]
+        [array attachments (
+            struct {
+                binary data                             Attachment data
+                string filename                         Attachment filename
+                [string description                     Attachment description]
+            }
+        )]
+    }
+
+Return value:
+    struct {
+        int status                                      Status
+                                                        (200 = OK)
+        string statusMessage                            Verbose status
+    }

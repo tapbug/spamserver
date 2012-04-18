@@ -1,0 +1,3 @@
+/srv/spamserver/conf/spamserver.conf
+/etc/init.d/spamserver
+/etc/logrotate.d/spamserver

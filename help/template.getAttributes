@@ -1,0 +1,21 @@
+Returns template attributes.
+
+    struct template.getAttributes(int id)
+
+Parameters:
+    int id                                              Template ID
+
+Return value:
+    struct {
+        int status                                      Status
+                                                        (200 = OK)
+                                                        (404 = Template doesn't exist)
+        string statusMessage                            Verbose status
+        struct templateAttributes {                     Template attributes
+            string name                                 Template name
+            string from                                 Template sender
+            string subject                              Template subject
+            string plainBody                            Template plaintext body
+            string htmlBody                             Template html body
+        }
+    }

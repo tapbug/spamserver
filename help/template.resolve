@@ -1,0 +1,15 @@
+Resolves template.
+
+    struct template.remove(string name)
+
+Parameters:
+    string name                                         Template name
+
+Return value:
+    struct {
+        int status                                      Status
+                                                        (200 = OK)
+                                                        (404 = Template doesn't exist)
+        string statusMessage                            Verbose status
+        int id                                          Template ID
+    }

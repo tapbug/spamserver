@@ -1,0 +1,12 @@
+/srv/spamserver/log/spamserver.log {
+    daily
+    missingok
+    rotate 365
+    compress
+    delaycompress
+    create 644 root root
+    dateext
+    postrotate
+        /etc/init.d/spamserver logrotate > /dev/null
+    endscript
+}
