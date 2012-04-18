@@ -6,8 +6,8 @@
 # Required-Stop:     $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Start and stop the PeareScope Spam server daemon
-# Description:       Controls the PeareScoe Spam server daemon
+# Short-Description: Start and stop the Spam server daemon
+# Description:       Controls the Spam server daemon
 ### END INIT INFO
 #
 

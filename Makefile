@@ -40,21 +40,9 @@ test: deb
 	sudo dpkg -i ../spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb
 	sudo /etc/init.d/spamserver restart
 
-testtest: deb
-	scp ../spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb root@test.pearescope.com:/tmp/
-	ssh root@test.pearescope.com "dpkg -i /tmp/spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb && /etc/init.d/spamserver restart"
-
 testnc: debnc
 	sudo dpkg -i ../spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb
 	sudo /etc/init.d/spamserver restart
-
-repotest: deb
-	scp ../spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb debian.pearescope.com:/deb/squeeze-testing/generic/
-	ssh debian.pearescope.com "makepkg"
-
-repoprod: deb
-	scp ../spamserver_`head -n1 debian/changelog | cut -d\( -f2 | cut -d\) -f1`_`dpkg --print-architecture`.deb debian.pearescope.com:/deb/squeeze-stable/generic/
-	ssh debian.pearescope.com "makepkg"
 
 .PHONY: all build clean install deb test
 
